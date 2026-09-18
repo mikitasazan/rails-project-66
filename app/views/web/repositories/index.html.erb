@@ -1,0 +1,30 @@
+<% content_for :title, t(".repositories") %>
+
+<%= link_to t(".new"), new_repository_path,
+            class: "inline-block rounded-md bg-blue-600 px-3.5 py-2.5 font-medium text-white hover:bg-blue-500" %>
+
+<table class="mt-4 w-full text-left">
+  <thead>
+    <tr>
+      <th scope="col" class="border-b border-gray-200 py-2 font-medium"><%= t(".name") %></th>
+      <th scope="col" class="border-b border-gray-200 py-2 font-medium"><%= t(".language") %></th>
+      <th scope="col" class="border-b border-gray-200 py-2 font-medium"><%= t(".last_check_passed") %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @repositories.each do |repository| %>
+      <tr class="hover:bg-gray-50">
+        <td class="border-b border-gray-100 py-2">
+          <%= link_to repository.display_name, repository_path(repository), class: "text-blue-600 hover:underline" %>
+        </td>
+
+        <td class="border-b border-gray-100 py-2"><%= repository.language %></td>
+
+        <td class="border-b border-gray-100 py-2">
+          <%= repository.checks.last ? repository.checks.last.passed? : t(".no_checks_yet") %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

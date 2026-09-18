@@ -1,0 +1,224 @@
+---
+ru:
+  layouts:
+    application:
+      app_name: Анализатор качества репозиториев
+    shared:
+      nav:
+        home: Главная
+        repositories: Репозитории
+        sign_in_with_github: Войти с помощью Github
+        logout: Выйти
+      flash: {}
+    web:
+      flash:
+        signed_in_user_only: Только для авторизованных пользователей
+        not_authorized: Недостаточно прав
+        success: Готово
+        error: Ошибка
+  web:
+    home:
+      index:
+        hello: Привет!
+        hexlet_description: Анализатор качества репозиториев — учебный проект Хекслета.
+        title: О проекте
+        project_description_html: 'Проект следит за качеством кода в репозиториях на GitHub: запускает линтеры и показывает отчёты по проверкам.'
+        more: Подробнее о проекте
+    auth:
+      callback:
+        success: Вы вошли в систему
+        error: Не удалось войти
+      logout:
+        success: Вы вышли из системы
+    repositories:
+      index:
+        repositories: Репозитории
+        new: Добавить
+        name: Название
+        language: Язык
+        last_check_passed: Последняя проверка пройдена
+        no_checks_yet: Проверок ещё нет
+      new:
+        header: Новый репозиторий
+      create:
+        success: Репозиторий добавлен
+      show:
+        check: Проверить
+        name: Название
+        language: Язык
+        created_at: Создан
+        updated_at: Обновлён
+        state: Статус
+        check_passed: Проверка пройдена
+        no_checks_yet: Проверок ещё нет
+      checks:
+        create:
+          check_created: Проверка создана
+        show:
+          go_to_repository: Вернуться к репозиторию
+          title: Проверка %{check_id}
+          created_at: Создана
+          status: Статус
+          check_passed: Проверка пройдена
+          issues_count: Количество замечаний
+          check_in_progress: Проверка ещё не завершена
+  activerecord:
+    attributes:
+      repository:
+        github_id: Репозиторий
+        name: Название
+        language: Язык
+      repository/check:
+        aasm_state/created: Не начата
+        aasm_state/checking: В процессе
+        aasm_state/finished: Завершена
+        aasm_state/failed: Произошла ошибка
+  helpers:
+    submit:
+      repository:
+        create: Создать репозиторий
+        update: Сохранить репозиторий
+  date:
+    abbr_day_names:
+    - Вс
+    - Пн
+    - Вт
+    - Ср
+    - Чт
+    - Пт
+    - Сб
+    abbr_month_names:
+    - null
+    - янв.
+    - февр.
+    - марта
+    - апр.
+    - мая
+    - июня
+    - июля
+    - авг.
+    - сент.
+    - окт.
+    - нояб.
+    - дек.
+    day_names:
+    - воскресенье
+    - понедельник
+    - вторник
+    - среда
+    - четверг
+    - пятница
+    - суббота
+    formats:
+      default: '%d.%m.%Y'
+      long: '%-d %B %Y'
+      short: '%-d %b'
+    month_names:
+    - null
+    - января
+    - февраля
+    - марта
+    - апреля
+    - мая
+    - июня
+    - июля
+    - августа
+    - сентября
+    - октября
+    - ноября
+    - декабря
+    order:
+    - :day
+    - :month
+    - :year
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: около %{count} часа
+        few: около %{count} часов
+        many: около %{count} часов
+        other: около %{count} часа
+      about_x_months:
+        one: около %{count} месяца
+        few: около %{count} месяцев
+        many: около %{count} месяцев
+        other: около %{count} месяца
+      about_x_years:
+        one: около %{count} года
+        few: около %{count} лет
+        many: около %{count} лет
+        other: около %{count} лет
+      almost_x_years:
+        one: почти 1 год
+        few: почти %{count} года
+        many: почти %{count} лет
+        other: почти %{count} лет
+      half_a_minute: полминуты
+      less_than_x_seconds:
+        one: меньше %{count} секунды
+        few: меньше %{count} секунд
+        many: меньше %{count} секунд
+        other: меньше %{count} секунды
+      less_than_x_minutes:
+        one: меньше %{count} минуты
+        few: меньше %{count} минут
+        many: меньше %{count} минут
+        other: меньше %{count} минуты
+      over_x_years:
+        one: больше %{count} года
+        few: больше %{count} часов
+        many: больше %{count} лет
+        other: больше %{count} года
+      x_seconds:
+        one: '%{count} секунду'
+        few: '%{count} секунды'
+        many: '%{count} секунд'
+        other: '%{count} секунды'
+      x_minutes:
+        one: '%{count} минуту'
+        few: '%{count} минуты'
+        many: '%{count} минут'
+        other: '%{count} минуты'
+      x_days:
+        one: '%{count} день'
+        few: '%{count} дня'
+        many: '%{count} дней'
+        other: '%{count} дня'
+      x_months:
+        one: '%{count} месяц'
+        few: '%{count} месяца'
+        many: '%{count} месяцев'
+        other: '%{count} месяца'
+      x_years:
+        one: '%{count} год'
+        few: '%{count} года'
+        many: '%{count} лет'
+        other: '%{count} год'
+  errors:
+    format: '%{attribute} %{message}'
+    messages:
+      record_invalid: 'Возникли ошибки: %{errors}'
+      blank: не может быть пустым
+      taken: уже существует
+      too_long: слишком большой длины (не может быть больше чем %{count} символов)
+      too_short: недостаточной длины (не может быть меньше %{count} символов)
+  time:
+    formats:
+      default: '%a, %d %b %Y, %H:%M:%S %z'
+      long: '%d %B %Y, %H:%M'
+      short: '%d %b, %H:%M'
+    am: утра
+    pm: вечера
+  check_result_mailer:
+    passed_check_email:
+      title: Проверка %{full_name} прошла
+      body: Линтер не нашёл замечаний.
+      link: Открыть отчёт
+    failed_check_email:
+      title: Проверка %{full_name} не прошла
+      body: Линтер нашёл замечания.
+      link: Открыть отчёт
+    error_check_email:
+      title: Ошибка проверки %{full_name}
+      body: Во время проверки произошла ошибка.
+      link: Открыть отчёт

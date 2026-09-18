@@ -1,0 +1,14 @@
+<% content_for :title, t(".header") %>
+
+<%= form_with model: @repository, class: "contents" do |form| %>
+  <div class="my-5">
+    <%= form.label :github_id %>
+
+    <%= form.select :github_id,
+                    @repositories_collection.map { |repository| [repository.full_name, repository.id] },
+                    { include_blank: true },
+                    class: "mt-2 block w-full rounded-md border border-gray-400 px-3 py-2 shadow-sm focus:outline-blue-600" %>
+  </div>
+
+  <%= form.submit class: "cursor-pointer rounded-md bg-blue-600 px-3.5 py-2.5 font-medium text-white hover:bg-blue-500" %>
+<% end %>

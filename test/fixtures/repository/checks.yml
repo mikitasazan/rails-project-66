@@ -1,0 +1,4 @@
+finished:
+  aasm_state: finished
+  passed: true
+  repository: one

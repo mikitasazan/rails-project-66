@@ -1,0 +1,6 @@
+one:
+  email: one@test.com
+  nickname: one
+  provider: github
+  uid: abc123
+  token: test_token

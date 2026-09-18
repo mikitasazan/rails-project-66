@@ -1,39 +1,37 @@
 # Анализатор качества репозиториев (Rails)
 
-[![hexlet-check](https://github.com/mikitasazan/rails-project-66/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/mikitasazan/rails-project-66/actions)
+[![CI](https://github.com/mikitasazan/rails-project-66/actions/workflows/ci.yml/badge.svg)](https://github.com/mikitasazan/rails-project-66/actions/workflows/ci.yml)
 
-Проект, который помогает автоматически следить за качеством репозиториев на гитхабе. Он отслеживает изменения и прогоняет их через встроенные анализаторы. Затем формирует отчеты и отправляет их пользователю.
+Учебный проект Хекслета: сервис следит за качеством репозиториев на GitHub —
+добавляет репозиторий, запускает проверку линтером по кнопке или по вебхуку
+и показывает отчёт с замечаниями.
 
-Учебный проект Хекслета: https://ru.hexlet.io/programs/rails
-Как это должно работать: https://files.hexlet.app/a/klff0i
+## Демонстрационный проект
 
+Примеры интерфейса готового приложения: [демонстрация](https://files.hexlet.app/a/klff0i).
 
 ## Стек
 
-- Ruby
-
-## Установка
-
-<!-- Опишите установку: клонирование, зависимости, переменные окружения -->
-
-```bash
-git clone https://github.com/mikitasazan/rails-project-66.git
-cd rails-project-66
-```
+- Ruby 4.0, Rails 8.1
+- SQLite3 (разработка и тесты), PostgreSQL (продакшен)
+- Tailwind CSS, esbuild, Turbo
+- OmniAuth (GitHub), Octokit, AASM, dry-container, enumerize
+- Minitest + power_assert, Rubocop, herb-lint
+- Sentry (DSN из переменной окружения SENTRY_DSN)
 
 ## Использование
 
-<!-- Добавьте примеры запуска и запись asciinema — именно это смотрит работодатель -->
+```bash
+make setup   # зависимости, сборка фронтенда, база данных
+make start   # веб-сервер на http://localhost:3000
+```
 
----
+Переменные окружения (см. `.env.example`): `GITHUB_CLIENT_ID`,
+`GITHUB_CLIENT_SECRET`, `SENTRY_DSN`.
 
-<details>
-<summary>Автоматические тесты Хекслета</summary>
+Проверка качества:
 
-Тесты запускаются на каждый коммит. За запуск отвечает файл `.github/workflows/hexlet-check.yml` — не удаляйте и не переименовывайте ни его, ни репозиторий.
-
-</details>
-
-## О Хекслете
-
-[Хекслет](https://ru.hexlet.io/) — школа программирования: авторские программы обучения с практикой, поддержкой наставников и реальными проектами, которые остаются в резюме. Этот репозиторий — один из таких проектов.
+```bash
+make test    # тесты minitest
+make lint    # rubocop + herb-lint
+```

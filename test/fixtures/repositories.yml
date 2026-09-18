@@ -1,0 +1,15 @@
+one:
+  github_id: 101
+  name: hexlet
+  full_name: Hexlet/hexlet
+  language: ruby
+  clone_url: https://github.com/Hexlet/hexlet
+  user: one
+
+two:
+  github_id: 102
+  name: hexlet-basics
+  full_name: Hexlet/hexlet-basics
+  language: javascript
+  clone_url: https://github.com/Hexlet/hexlet-basics
+  user: one
