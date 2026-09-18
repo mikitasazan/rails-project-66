@@ -47,6 +47,6 @@ class Web::RepositoriesController < Web::ApplicationController
   private
 
   def repository_params
-    params.expect(repository: [:github_id])
+    params.expect(repository: [ :github_id ])
   end
 end

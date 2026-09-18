@@ -4,7 +4,7 @@ class BashRunner
   class << self
     def execute(command)
       output = `#{command}`
-      [output, $CHILD_STATUS.exitstatus]
+      [ output, $CHILD_STATUS.exitstatus ]
     end
   end
 end
