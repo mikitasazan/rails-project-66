@@ -211,14 +211,17 @@ ru:
     pm: вечера
   check_result_mailer:
     passed_check_email:
+      subject: Проверка %{full_name} прошла успешно
       title: Проверка %{full_name} прошла
       body: Линтер не нашёл замечаний.
       link: Открыть отчёт
     failed_check_email:
+      subject: Проверка %{full_name} завершилась с ошибками
       title: Проверка %{full_name} не прошла
       body: Линтер нашёл замечания.
       link: Открыть отчёт
     error_check_email:
+      subject: Ошибка проверки %{full_name}
       title: Ошибка проверки %{full_name}
       body: Во время проверки произошла ошибка.
       link: Открыть отчёт
